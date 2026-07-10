@@ -31,6 +31,7 @@ export default function Footer() {
                 { label: "Features", href: "#features" },
                 { label: "Book a Session", href: "#book" },
                 { label: "Privacy Policy", href: "/privacy" },
+                { label: "Terms & Conditions", href: "/terms-and-conditions" },
               ].map((link) => (
                 <li key={link.href}>
                   <a
