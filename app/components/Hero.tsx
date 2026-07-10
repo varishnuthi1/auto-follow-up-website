@@ -698,25 +698,20 @@ function GlowButton({
   href,
   children,
   primary = false,
-  delay = 0,
   external = false,
 }: {
   href: string;
   children: React.ReactNode;
   primary?: boolean;
-  delay?: number;
   external?: boolean;
 }) {
   const extProps = external ? { target: "_blank" as const, rel: "noopener noreferrer" } : {};
   if (primary) {
     return (
-      <motion.a
+      <a
         href={href}
         {...extProps}
-        className="btn-press btn-glow hover-lift relative px-8 py-4 rounded-full text-lg font-bold bg-[var(--accent-green)] text-[var(--bg-primary)] overflow-hidden"
-        initial={{ opacity: 0, transform: "translateY(14px)" }}
-        animate={{ opacity: 1, transform: "translateY(0px)" }}
-        transition={{ duration: 0.6, delay, ease }}
+        className="btn-press btn-glow hover-lift relative px-8 py-4 rounded-full text-lg font-bold bg-[var(--accent-green)] text-[var(--bg-primary)] overflow-hidden inline-flex items-center"
       >
         <motion.span
           className="absolute inset-0 rounded-full pointer-events-none"
@@ -725,22 +720,19 @@ function GlowButton({
           transition={{ duration: 3, ease: "linear", repeat: Infinity }}
         />
         <span className="relative z-10">{children}</span>
-      </motion.a>
+      </a>
     );
   }
   return (
-    <motion.a
+    <a
       href={href}
-      className="btn-press px-8 py-4 rounded-full text-lg font-medium text-[var(--text-secondary)] border border-white/10"
+      className="btn-press px-8 py-4 rounded-full text-lg font-medium text-[var(--text-secondary)] border border-white/10 inline-flex items-center"
       style={{ transition: "border-color 200ms cubic-bezier(0.23,1,0.32,1), color 200ms cubic-bezier(0.23,1,0.32,1)" }}
-      initial={{ opacity: 0, transform: "translateY(14px)" }}
-      animate={{ opacity: 1, transform: "translateY(0px)" }}
-      transition={{ duration: 0.6, delay, ease }}
       onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)"; e.currentTarget.style.color = "var(--text-primary)"; }}
       onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)"; e.currentTarget.style.color = "var(--text-secondary)"; }}
     >
       {children}
-    </motion.a>
+    </a>
   );
 }
 
@@ -885,10 +877,10 @@ export default function Hero({ visible }: { visible: boolean }) {
 
             {/* CTAs */}
             <div className="mt-8 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4">
-              <GlowButton href="https://calendar.app.google/2oH4m4n3eHhe6RMu7" primary delay={ctaDelay} external>
+              <GlowButton href="https://calendar.app.google/2oH4m4n3eHhe6RMu7" primary external>
                 Book a Free Session
               </GlowButton>
-              <GlowButton href="#how-it-works" delay={ctaDelay + 0.1}>
+              <GlowButton href="#how-it-works">
                 See How It Works
               </GlowButton>
             </div>
