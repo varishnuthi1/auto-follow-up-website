@@ -3,49 +3,42 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — Auto Follow Up",
-  description: "How Auto Follow Up collects, uses, and protects your data.",
+  description:
+    "Privacy policy for Auto Follow Up's automated missed call SMS notification service.",
 };
 
 const sections = [
   {
-    title: "Who We Are",
-    content:
-      "Auto Follow Up is a service that helps small businesses automatically respond to missed calls via SMS. When a call goes unanswered, the caller receives a single text message on behalf of the business.",
+    heading: "Who We Are",
+    body: "Auto Follow Up provides automated missed call SMS notification services to small businesses in the United States. When a caller contacts a business using our service and the call goes unanswered, our system sends an automated text message on behalf of that business.",
   },
   {
-    title: "What We Collect",
-    content:
-      "We collect the phone numbers of callers who reach businesses using Auto Follow Up. This happens automatically when a call is missed. We also collect the date and time of each missed call for logging purposes.",
+    heading: "Information We Collect",
+    body: "We collect the following information: phone numbers of callers who contact businesses using our service, timestamps of missed calls, and call status. We do not collect names, addresses, payment information, or any other personal data.",
   },
   {
-    title: "How We Use Your Data",
-    content:
-      "Phone numbers are used solely to send a single SMS notification on behalf of the business you called. We do not use your number for marketing, advertising, or any other purpose. Call logs are shared only with the business owner whose number you called.",
+    heading: "How We Use Your Information",
+    body: "Phone numbers are used solely to send a single automated SMS notification informing you that your call was missed and that the business will return your call. We do not use your phone number for marketing, promotions, or any other purpose.",
   },
   {
-    title: "Data Sharing",
-    content:
-      "We do not sell, rent, or share your personal data with any third parties. Your phone number is never transferred to advertisers, data brokers, or any external services beyond what is necessary to deliver the single SMS reply.",
+    heading: "SMS and Text Messaging",
+    body: "Auto Follow Up sends SMS notifications on behalf of small businesses to inform callers their call was missed. Message frequency is approximately 1 message per missed call event. Message and data rates may apply. Text STOP to opt out at any time. Text HELP for assistance.",
   },
   {
-    title: "Data Retention",
-    content:
-      "Call logs and phone numbers are retained for up to 90 days to allow business owners to review their missed call history. After this period, data is permanently deleted from our systems.",
+    heading: "Data Sharing",
+    body: "We do not sell, share, rent, or trade your phone number or any personal information to third parties, affiliates, or lead generators for marketing or promotional purposes. Mobile opt-in data and consent will not be shared with any third parties or affiliates for marketing or promotional purposes. Information may only be shared with subcontractors who directly support our service operations, such as Twilio for SMS delivery and Google for data logging, and only to the extent necessary to deliver the service.",
   },
   {
-    title: "Your Rights",
-    content:
-      "You have the right to request deletion of your data at any time. To do so, email us at varishnuthi1@gmail.com with the phone number you'd like removed and we will delete it within 5 business days.",
+    heading: "Data Retention",
+    body: "Caller phone numbers and timestamps are stored in a secure Google Sheet accessible only to the business owner. Data is retained for as long as the business remains a client of Auto Follow Up. You may request deletion of your data at any time.",
   },
   {
-    title: "Security",
-    content:
-      "We take reasonable technical measures to protect the data we hold. Call logs are stored securely and access is limited to the business owner and our internal systems.",
+    heading: "Your Rights and Opt-Out",
+    body: "You may opt out of receiving SMS messages at any time by replying STOP to any message you receive. You will receive one confirmation message and no further messages will be sent. To request deletion of your data, contact us at varishnuthi1@gmail.com.",
   },
   {
-    title: "Contact",
-    content:
-      "If you have any questions about this privacy policy or how your data is handled, contact us at varishnuthi1@gmail.com.",
+    heading: "Contact Us",
+    body: "For any questions, requests, or concerns about this privacy policy, contact us at varishnuthi1@gmail.com.",
   },
 ];
 
@@ -55,7 +48,7 @@ export default function PrivacyPage() {
       style={{ background: "var(--bg-primary)", minHeight: "100vh" }}
       className="text-[var(--text-primary)]"
     >
-      {/* Minimal nav */}
+      {/* Nav */}
       <header className="border-b border-white/5">
         <div className="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link
@@ -66,17 +59,14 @@ export default function PrivacyPage() {
             <span className="gradient-text-green">Auto</span>
             <span className="text-[var(--text-primary)]"> Follow Up</span>
           </Link>
-          <Link
-            href="/"
-            className="privacy-back-link text-sm text-[var(--text-muted)]"
-          >
+          <Link href="/" className="privacy-back-link text-sm text-[var(--text-muted)]">
             ← Back to home
           </Link>
         </div>
       </header>
 
       <main className="max-w-3xl mx-auto px-6 py-16 md:py-24">
-        {/* Header */}
+        {/* Page header */}
         <div className="mb-14">
           <p className="text-xs font-bold tracking-widest uppercase text-[var(--accent-green)] mb-4">
             Legal
@@ -87,11 +77,23 @@ export default function PrivacyPage() {
           >
             Privacy Policy
           </h1>
-          <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
-            Last updated: July 10, 2026
-          </p>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6 text-sm text-[var(--text-muted)]">
+            <span>Last Updated: July 2026</span>
+            <span className="hidden sm:block text-white/10">·</span>
+            <span>
+              Business:{" "}
+              <span className="text-[var(--text-secondary)]">Auto Follow Up</span>
+            </span>
+            <span className="hidden sm:block text-white/10">·</span>
+            <a
+              href="mailto:varishnuthi1@gmail.com"
+              className="privacy-email-link text-[var(--accent-green)]"
+            >
+              varishnuthi1@gmail.com
+            </a>
+          </div>
           <div
-            className="mt-6 h-[1px]"
+            className="mt-8 h-[1px]"
             style={{
               background:
                 "linear-gradient(90deg, var(--accent-green), transparent)",
@@ -99,36 +101,30 @@ export default function PrivacyPage() {
           />
         </div>
 
-        {/* Intro */}
-        <p className="text-[var(--text-secondary)] leading-relaxed mb-12">
-          This policy explains how Auto Follow Up handles the data it processes
-          on behalf of small businesses and their callers. We keep things
-          simple: we collect only what we need, use it only as described, and
-          never sell it.
-        </p>
-
         {/* Sections */}
-        <div className="space-y-10">
+        <div className="space-y-0">
           {sections.map((section, i) => (
             <div key={i}>
-              <h2
-                className="text-xl font-bold text-[var(--text-primary)] mb-3"
-                style={{ fontFamily: "var(--font-bricolage)" }}
-              >
-                {section.title}
-              </h2>
-              <p className="text-[var(--text-secondary)] leading-relaxed">
-                {section.content}
-              </p>
+              <div className="py-8">
+                <h2
+                  className="text-lg font-bold text-[var(--text-primary)] mb-3"
+                  style={{ fontFamily: "var(--font-bricolage)" }}
+                >
+                  {section.heading}
+                </h2>
+                <p className="text-[var(--text-secondary)] leading-relaxed text-[15px]">
+                  {section.body}
+                </p>
+              </div>
               {i < sections.length - 1 && (
-                <div className="mt-10 h-[1px] bg-white/5" />
+                <div className="h-[1px] bg-white/5" />
               )}
             </div>
           ))}
         </div>
 
-        {/* Footer note */}
-        <div className="mt-16 p-6 rounded-2xl border border-white/5 bg-[var(--bg-card)]">
+        {/* Contact card */}
+        <div className="mt-12 p-6 rounded-2xl border border-white/5 bg-[var(--bg-card)]">
           <p className="text-sm text-[var(--text-muted)] leading-relaxed">
             Questions or data removal requests?{" "}
             <a
