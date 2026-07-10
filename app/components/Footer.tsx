@@ -30,6 +30,7 @@ export default function Footer() {
                 { label: "Why Auto Follow Up", href: "#why" },
                 { label: "Features", href: "#features" },
                 { label: "Book a Session", href: "#book" },
+                { label: "Privacy Policy", href: "/privacy" },
               ].map((link) => (
                 <li key={link.href}>
                   <a

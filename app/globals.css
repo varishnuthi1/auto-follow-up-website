@@ -144,6 +144,22 @@ body {
   }
 }
 
+/* Privacy page hover links — CSS-only, no client JS needed */
+@media (hover: hover) and (pointer: fine) {
+  .privacy-back-link {
+    transition: color 150ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .privacy-back-link:hover {
+    color: var(--text-primary);
+  }
+  .privacy-email-link {
+    transition: opacity 150ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .privacy-email-link:hover {
+    opacity: 0.75;
+  }
+}
+
 /* Gradient text utility */
 .gradient-text-green {
   background: linear-gradient(135deg, var(--accent-green), var(--accent-green-light));
